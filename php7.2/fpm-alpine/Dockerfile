@@ -60,11 +60,11 @@ VOLUME /var/www/html
 
 # Define Joomla version and expected SHA1 signature
 ENV JOOMLA_VERSION 3.8.12
-ENV JOOMLA_SHA1 a354eb7689fe3077d1a14ba3f8a7327017bafd1b
+#ENV JOOMLA_SHA1 a354eb7689fe3077d1a14ba3f8a7327017bafd1b
 
 # Download package and extract to web volume
 RUN curl -o joomla.tar.bz2 -SL https://sourceforge.net/projects/joomla-governofederal/files/joomla-3.x-master.tar.bz2/download \
-	&& echo "$JOOMLA_SHA1 *joomla.tar.bz2" | sha1sum -c - \
+	#&& echo "$JOOMLA_SHA1 *joomla.tar.bz2" | sha1sum -c - \
 	&& mkdir /usr/src/joomla \
 	&& tar -xf joomla.tar.bz2 -C /usr/src/joomla \
 	&& rm joomla.tar.bz2 \
